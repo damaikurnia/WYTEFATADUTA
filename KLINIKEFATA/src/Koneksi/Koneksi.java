@@ -17,7 +17,7 @@ public class Koneksi {
     private static String jdbcURL = "jdbc:mysql://localhost:3306/DUTAEFATA";
     private static String user = "root";
 //    private static String password = "root";//linux database
-    private static String password = "mysqlroot";//windows database
+    private static String password = "";//windows database
     private static Connection connection = null;
 
     public static Connection getKoneksi() {
@@ -25,7 +25,7 @@ public class Koneksi {
 //            Class.forName("org.gjt.mm.mysql.Driver");
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(jdbcURL, user, password);
-            System.out.println("koneksi berhasil");
+//            System.out.println("koneksi berhasil");
             return connection;
         } catch (Exception ex) {
             System.out.println("message: " + ex.getMessage() + "\nTidak konek");
